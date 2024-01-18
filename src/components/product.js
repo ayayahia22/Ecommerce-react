@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 function Product(props) {
     const {product} = props
     return(<>
@@ -9,9 +9,11 @@ function Product(props) {
                 <p className="card-text">
                   {product.description}
                 </p>
-                <button href="#" className="btn btn-primary">
-                  Go somewhere
-                </button>
+                <p>price: {product.price} $</p>
+                
+                <Link className="btn btn-primary" to={`/product/${product.id}`}>
+              Details
+            </Link>
               </div>
             </div>
     </>)
